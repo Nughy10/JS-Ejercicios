@@ -162,12 +162,10 @@ const counterWords = [
     let arrayRepeat = [];
     for (let i = 0; i < param.length; i++) {
         if (!arrayRepeat.includes(param[i])){
-            console.log(param[i]);
-            const variable = param[i];
-            arrayRepeat.push({variable:0})
+            arrayRepeat.push(param[i]);
         }
-        else {
-            arrayRepeat[param[i]] = param[i]++;
+        else{
+            arrayRepeat[param[i]] = 1;
         }
     }
     return arrayRepeat;
