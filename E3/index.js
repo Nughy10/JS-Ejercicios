@@ -70,7 +70,6 @@ for (let i = 0; i < placeToTravel.length; i++) {
 }
 console.log(placeToTravel);
 
-
 //MIXED FOR e INCLUDES-----------------------------------------------------------------------------
 // Usa un bucle for para recorrer todos los juguetes y elimina los que incluyan la palabra gato. 
 // Recuerda que puedes usar la función .includes() para comprobarlo.
