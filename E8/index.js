@@ -140,3 +140,194 @@ const citiesName = cities.map((cities) => {
     return {nombre: cities.name};
 })
 console.log(citiesName);
+
+
+//FILTER-------------------------------------------------------------------------------------------
+// 5.1 Dado el siguiente array, utiliza .filter() para generar un nuevo array con los valores que sean mayor que 18
+const ages1 = [22, 14, 24, 55, 65, 21, 12, 13, 90];
+const result1 = ages1.filter(checkAdult);
+function checkAdult(age1) {
+  return age1 >= 18;
+}
+const mayoresEdad = checkAdult(ages1);
+console.log(result1);
+
+// 5.2 Dado el siguiente array, actualiza .filter() para generar un nuevo array con los valores que sean par.
+const ages2 = [22, 14, 24, 55, 65, 21, 12, 13, 90];
+const result2 = ages2.filter(checkPar);
+function checkPar(age2) {
+    return age2%2 === 0;  
+}
+const numerosPar = checkPar(ages2);
+console.log(result2);
+
+// 5.3 Dado el siguiente array, utiliza .filter() para generar un nuevo array con los streamers que tengan el gameMorePlayed = 'League of Legends'.
+const streamers1 = [
+	{name: 'Rubius', age: 32, gameMorePlayed: 'Minecraft'},
+	{name: 'Ibai', age: 25, gameMorePlayed: 'League of Legends'}, 
+	{name: 'Reven', age: 43, gameMorePlayed: 'League of Legends'},
+	{name: 'AuronPlay', age: 33, gameMorePlayed: 'Among Us'}
+];
+const lol = streamers1.filter(function(streamer1){
+    return streamer1.gameMorePlayed === "League of Legends";
+});
+console.log(lol);
+
+// 5.4 Dado el siguiente array, utiliza .filter() para generar un nuevo array 
+// con los streamers que incluyan el caracter 'u' en su propiedad .name. Recomendamos usar la funcion .includes() para la comprobación.
+const streamers2 = [
+	{name: 'Rubius', age: 32, gameMorePlayed: 'Minecraft'},
+	{name: 'Ibai', age: 25, gameMorePlayed: 'League of Legends'},
+	{name: 'Reven', age: 43, gameMorePlayed: 'League of Legends'},
+	{name: 'AuronPlay', age: 33, gameMorePlayed: 'Among Us'}
+];
+const uName = streamers2.filter(function(streamer2){
+    return streamer2.name.includes("u");
+});
+console.log(uName);
+
+// // 5.5 utiliza .filter() para generar un nuevo array con los streamers que incluyan 
+// // el caracter 'Legends' en su propiedad .gameMorePlayed. Recomendamos usar la funcion .includes() para la comprobación.
+// // Además, pon el valor de la propiedad .gameMorePlayed a MAYUSCULAS cuando .age sea mayor que 35.
+const streamers3 = [
+	{name: 'Rubius', age: 32, gameMorePlayed: 'Minecraft'},
+	{name: 'Ibai', age: 25, gameMorePlayed: 'League of Legends'},
+	{name: 'Reven', age: 43, gameMorePlayed: 'LEAGUE OF LEGENDS'},
+	{name: 'AuronPlay', age: 33, gameMorePlayed: 'Among Us'}
+];
+const uLegend = streamers3.filter(function(streamer3){
+    const filtros = (streamer3.age >= 35);
+    return filtros; 
+});
+console.log(uLegend);
+
+// 5.6 Dado el siguiente html y javascript, utiliza .filter() para mostrar por consola los streamers que incluyan la palabra introducida en el input. De esta forma, si 
+// introduzco 'Ru' me deberia de mostrar solo el streamer 'Rubius'. Siintroduzco 'i', me deberia de mostrar el streamer 'Rubius' e 'Ibai'.
+const streamers4 = [
+	{name: 'Rubius', age: 32, gameMorePlayed: 'Minecraft'},
+	{name: 'Ibai', age: 25, gameMorePlayed: 'League of Legends'},
+	{name: 'Reven', age: 43, gameMorePlayed: 'League of Legends'},
+	{name: 'AuronPlay', age: 33, gameMorePlayed: 'Among Us'}
+];
+const uLetter1 = streamers4.filter(function(streamer4){
+    return streamer4.name.includes("filterInput");
+});
+console.log(uLetter1);
+
+// 5.7 Dado el siguiente html y javascript, utiliza .filter() para mostrar por consola los streamers que incluyan la palabra introducida en el input. De esta forma, si 
+// introduzco 'Ru' me deberia de mostrar solo el streamer 'Rubius'. Si introduzco 'i', me deberia de mostrar el streamer 'Rubius' e 'Ibai'.
+// En este caso, muestra solo los streamers filtrados cuando hagamos click en el button.
+const streamers5 = [
+	{name: 'Rubius', age: 32, gameMorePlayed: 'Minecraft'},
+	{name: 'Ibai', age: 25, gameMorePlayed: 'League of Legends'},
+	{name: 'Reven', age: 43, gameMorePlayed: 'League of Legends'},
+	{name: 'AuronPlay', age: 33, gameMorePlayed: 'Among Us'}
+];
+const uLetter2 = streamers5.filter(function(streamer5){
+    return streamer5.name.includes("filterButton");
+});
+console.log(uLetter2);
+
+
+//FIND---------------------------------------------------------------------------------------------
+// 6.1 Dado el siguiente array, usa .find() para econtrar el número 100.
+const numbers = [32, 21, 63, 95, 100, 67, 43];
+const found = numbers.find(element => element > 99);
+console.log(found);
+
+// 6.2 Dado el siguiente array, usa .find() para econtrar la pelicula del año 2010.
+const movies = [
+	{title: 'Madagascar', stars: 4.5, date: 2015},
+	{title: 'Origen', stars: 5, date: 2010},
+	{title: 'Your Name', stars: 5, date: 2016}
+];
+function foundMovie (movie){
+    return movie.date === 2015;
+}
+console.log(movies.find(foundMovie));
+
+// 6.3 Dado el siguiente javascript, usa .find() para econtrar el alien de nombre 
+// 'Cucushumushu' y la mutación 'Porompompero'. Una vez que los encuentres, usa 
+// spread operator para fusionarlos teniendo en cuenta que el objeto de la mutación 
+// lo queremos meter en la propiedad .mutation del objeto fusionado.
+const aliens = [
+	{name: 'Zalamero', planet: 'Eden', age: 4029},
+	{name: 'Paktu', planet: 'Andromeda', age: 32},
+	{name: 'Cucushumushu', planet: 'Marte', age: 503021}
+];
+const mutations = [
+	{name: 'Porompompero', description: 'Hace que el alien pueda adquirir la habilidad de tocar el tambor'},
+	{name: 'Fly me to the moon', description: 'Permite volar, solo y exclusivamente a la luna'},
+	{name: 'Andando que es gerundio', description: 'Invoca a un señor mayor como Personal Trainer'}
+];
+function foundAlien (alien){
+    return alien.name === "Cucushumushu";
+}
+function foundMutation (mutation){
+    return mutation.name === "Porompompero";
+}
+console.log(aliens.find(foundAlien));
+console.log(mutations.find(foundMutation));
+
+
+//REDUCE-------------------------------------------------------------------------------------------
+// 7.1 Dado el siguiente array, haz una suma de todos las notas de los examenes de 
+// los alumnos usando la función .reduce().
+const exams = [
+    {name: 'Yuyu Cabeza Crack', score: 5}, 
+    {name: 'Maria Aranda Jimenez', score: 1}, 
+    {name: 'Cristóbal Martínez Lorenzo', score: 6}, 
+    {name: 'Mercedez Regrera Brito', score: 7},
+    {name: 'Pamela Anderson', score: 3},
+    {name: 'Enrique Perez Lijó', score: 6},
+    {name: 'Pedro Benitez Pacheco', score: 8},
+    {name: 'Ayumi Hamasaki', score: 4},
+    {name: 'Robert Kiyosaki', score: 2},
+    {name: 'Keanu Reeves', score: 10}
+];
+const totalScore1 = exams.reduce(function(accumulator, exams){
+    return accumulator + exams.score;},0);
+console.log(exams);
+console.log(totalScore1);
+
+// 7.2 Dado el mismo array, haz una suma de todos las notas de los examenes de los alumnos que esten aprobados usando la función .reduce().   
+const filter = exams.filter(function(exams){
+    const filtro = (exams.score >= 5);
+    return filtro;
+});   
+console.log(filter);
+
+const totalScore2 = filter.reduce(function(accumulator, filter){
+    return accumulator + filter.score;},0);
+console.log(totalScore2);
+
+// 7.3 Dado el mismo array, haz la media de las notas de todos los examenes .reduce().
+const totalScore3 = exams.reduce(function(accumulator, exams){
+    return accumulator + exams.score;},0);
+console.log(exams);
+console.log(totalScore3/10);
+
+
+//BONUS--------------------------------------------------------------------------------------------
+// 8.1 Dado el siguiente javascript filtra los videojuegos por gender = 'RPG' usando 
+// .filter() y usa .reduce() para conseguir la media de sus .score. 
+// La función .find() también podría ayudarte para el contrar el genero 'RPG' en el 
+// array .gender.
+const videogames = [
+    {name: 'Final Fantasy VII', genders: ['RPG'], score: 9.5},
+    {name: 'Assasins Creed Valhala', genders: ['Aventura', 'RPG'], score: 4.5},
+    {name: 'The last of Us 2', genders: ['Acción', 'Aventura'], score: 9.8},
+    {name: 'Super Mario Bros', genders: ['Plataforma'], score: 8.5},
+    {name: 'Genshin Impact', genders: ['RPG', 'Aventura'], score: 7.5},
+    {name: 'Legend of Zelda: Breath of the wild', genders: ['RPG', 'La cosa más puto bonita que he visto nunca'], score: 10},
+]
+const foundVG = videogames.filter(function(videogames){
+    const filterVG = (videogames.genders = "RPG");
+    return filterVG;
+});   
+console.log(foundVG);
+
+const totalScore4 = foundVG.reduce(function(accumulator, foundVG){
+    return accumulator + foundVG.score;},0);
+
+console.log(totalScore4/6);
