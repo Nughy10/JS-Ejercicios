@@ -83,7 +83,8 @@ console.log(toysAll);
 // 3.5 Dado el siguiente array. Crear una copia de él eliminando la posición 2 
 // pero sin editar el array inicial. De nuevo, usando spread operatos.
 const colors = ['rojo', 'azul', 'amarillo', 'verde', 'naranja'];
-let colorsNew = [colors[0],colors[1],colors[3],colors[4]];
+let colorsNew = [...colors];
+colorsNew.splice(2,1);
 console.log(colorsNew);
 
 
@@ -209,10 +210,13 @@ const streamers4 = [
 	{name: 'Reven', age: 43, gameMorePlayed: 'League of Legends'},
 	{name: 'AuronPlay', age: 33, gameMorePlayed: 'Among Us'}
 ];
-const uLetter1 = streamers4.filter(function(streamer4){
-    return streamer4.name.includes("filterInput");
-});
-console.log(uLetter1);
+const input = document.querySelector("input");
+const handleInput = (event) => {
+    console.log(input.value);
+    const filtersStreamers = streamers4.filter((streamer) => streamer.name.toLowerCase().includes(input.value.toLowerCase()));
+    console.log(filtersStreamers);
+}
+input.addEventListener("input", handleInput);
 
 // 5.7 Dado el siguiente html y javascript, utiliza .filter() para mostrar por consola los streamers que incluyan la palabra introducida en el input. De esta forma, si 
 // introduzco 'Ru' me deberia de mostrar solo el streamer 'Rubius'. Si introduzco 'i', me deberia de mostrar el streamer 'Rubius' e 'Ibai'.
@@ -223,11 +227,15 @@ const streamers5 = [
 	{name: 'Reven', age: 43, gameMorePlayed: 'League of Legends'},
 	{name: 'AuronPlay', age: 33, gameMorePlayed: 'Among Us'}
 ];
-const uLetter2 = streamers5.filter(function(streamer5){
-    return streamer5.name.includes("filterButton");
-});
-console.log(uLetter2);
+const input2 = document.querySelector(".filterInput");
+const button = document.querySelector(".filterButton");
 
+const handleButton = (event) => {
+    console.log(input2.value);
+    const filtersStreamers = streamers5.filter((streamer) => streamer.name.toLowerCase().includes(input2.value.toLowerCase()));
+    console.log(filtersStreamers);
+}
+button.addEventListener("click", handleButton);
 
 //FIND---------------------------------------------------------------------------------------------
 // 6.1 Dado el siguiente array, usa .find() para econtrar el número 100.
