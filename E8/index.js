@@ -150,7 +150,6 @@ const result1 = ages1.filter(checkAdult);
 function checkAdult(age1) {
   return age1 >= 18;
 }
-const mayoresEdad = checkAdult(ages1);
 console.log(result1);
 
 // 5.2 Dado el siguiente array, actualiza .filter() para generar un nuevo array con los valores que sean par.
@@ -159,7 +158,6 @@ const result2 = ages2.filter(checkPar);
 function checkPar(age2) {
     return age2%2 === 0;  
 }
-const numerosPar = checkPar(ages2);
 console.log(result2);
 
 // 5.3 Dado el siguiente array, utiliza .filter() para generar un nuevo array con los streamers que tengan el gameMorePlayed = 'League of Legends'.
@@ -210,13 +208,13 @@ const streamers4 = [
 	{name: 'Reven', age: 43, gameMorePlayed: 'League of Legends'},
 	{name: 'AuronPlay', age: 33, gameMorePlayed: 'Among Us'}
 ];
-const input = document.querySelector("input");
-const handleInput = (event) => {
-    console.log(input.value);
-    const filtersStreamers = streamers4.filter((streamer) => streamer.name.toLowerCase().includes(input.value.toLowerCase()));
-    console.log(filtersStreamers);
-}
-input.addEventListener("input", handleInput);
+// const input = document.querySelector("input");
+// const handleInput = (event) => {
+//     console.log(input.value);
+//     const filtersStreamers = streamers4.filter((streamer) => streamer.name.toLowerCase().includes(input.value.toLowerCase()));
+//     console.log(filtersStreamers);
+// }
+// input.addEventListener("input", handleInput);
 
 // 5.7 Dado el siguiente html y javascript, utiliza .filter() para mostrar por consola los streamers que incluyan la palabra introducida en el input. De esta forma, si 
 // introduzco 'Ru' me deberia de mostrar solo el streamer 'Rubius'. Si introduzco 'i', me deberia de mostrar el streamer 'Rubius' e 'Ibai'.
@@ -227,15 +225,14 @@ const streamers5 = [
 	{name: 'Reven', age: 43, gameMorePlayed: 'League of Legends'},
 	{name: 'AuronPlay', age: 33, gameMorePlayed: 'Among Us'}
 ];
-const input2 = document.querySelector(".filterInput");
-const button = document.querySelector(".filterButton");
-
-const handleButton = (event) => {
-    console.log(input2.value);
-    const filtersStreamers = streamers5.filter((streamer) => streamer.name.toLowerCase().includes(input2.value.toLowerCase()));
-    console.log(filtersStreamers);
-}
-button.addEventListener("click", handleButton);
+// const input2 = document.querySelector(".filterInput");
+// const button = document.querySelector(".filterButton");
+// const handleButton = (event) => {
+//     console.log(input2.value);
+//     const filtersStreamers = streamers5.filter((streamer) => streamer.name.toLowerCase().includes(input2.value.toLowerCase()));
+//     console.log(filtersStreamers);
+// }
+// button.addEventListener("click", handleButton);
 
 //FIND---------------------------------------------------------------------------------------------
 // 6.1 Dado el siguiente array, usa .find() para econtrar el número 100.
